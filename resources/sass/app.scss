@@ -1,0 +1,57 @@
+// Fonts
+@import url("https://fonts.bunny.net/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Dracula UI
+@import "dracula-ui/styles/dracula-ui.css";
+
+// Font awesome
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+body {
+    background-color: #21222c;
+}
+.bg-dark {
+    color: #282a36;
+}
+
+// Navbar
+.navbar-toggler {
+    margin-right: 20px;
+}
+.navbar {
+    position: sticky;
+    height: 70px;
+}
+.navbar-brand {
+    padding-left: 20px;
+}
+///////////////////////
+.container-fluid {
+    padding-left: 0px;
+}
+.tabcontent {
+    display: none;
+}
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,8 @@
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
+@include('components.miniCardSimple')
