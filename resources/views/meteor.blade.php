@@ -105,14 +105,10 @@
                         <a class="drac-tab-link drac-text" onclick="openView(event, 'Simple')">Simple</a>
                     </li>
                     <li class="tablinks drac-tab">
-                        <a class=" drac-tab-link drac-text" onclick="openView(event, 'Extended')">Extended</a>
+                        <a class="drac-tab-link drac-text" onclick="openView(event, 'Extended')">Extended</a>
                     </li>
                 </ul>
             </div>
-            <script>
-                // Get the element with id="defaultOpen" and click on it
-                document.getElementById("Simple").click();
-            </script>
             <div class="tabcontent" id="Simple">
                 @include('components.simpleTabElement')
 
@@ -120,6 +116,11 @@
             <div class="tabcontent" id="Extended">
                 @include('components.extendedTabContent')
             </div>
+            <script>
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("Simple").click();
+            </script>
+
             <div class="p-3"></div>
         </div>
     </div>
