@@ -22,6 +22,6 @@ function openView(evt, vievName) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(vievName).style.display = "block";
     evt.currentTarget.className += " drac-tab-active";
 }
