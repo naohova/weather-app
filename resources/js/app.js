@@ -2,6 +2,10 @@ import "./bootstrap";
 import "../sass/app.scss";
 import ApexCharts from "apexcharts";
 
+document.getElementById("Simple").click();
+document.getElementById("Simple").click();
+document.getElementById("Simple").click();
+
 function openView(evt, vievName) {
     // Declare all variables
     var i, tabcontent, tablinks;
