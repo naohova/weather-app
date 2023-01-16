@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meteor</title>
-    @vite(['resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     @include('components.navbar')
@@ -118,7 +118,7 @@
             </div>
             <script>
                 // Get the element with id="defaultOpen" and click on it
-                document.getElementById("Simple").click();
+                
             </script>
 
             <div class="p-3"></div>
