@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'GisMeteo' => [
+        'token' => env('GISMETEO_API_ACESS_TOKEN'),
+        'lang' => env('GISMETEO_LANG'),
+    ],
+
 ];

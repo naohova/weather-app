@@ -118,7 +118,7 @@
             </div>
             <script>
                 // Get the element with id="defaultOpen" and click on it
-                
+
             </script>
 
             <div class="p-3"></div>
