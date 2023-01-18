@@ -33,7 +33,9 @@ return [
 
     'GisMeteo' => [
         'token' => env('GISMETEO_API_ACESS_TOKEN'),
-        'lang' => env('GISMETEO_LANG'),
+        'lang' => env('GISMETEO_LANG', 'en'),
+        // default moscow
+        'sity' => env('GISMETEO_GEO_OBJECT_ID', '4368'),
     ],
 
 ];
