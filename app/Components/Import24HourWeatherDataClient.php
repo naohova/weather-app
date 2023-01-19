@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Components;
+namespace App\Compoenets;
 use GuzzleHttp\Client;
 
 
 
-class ImportCurrentWeatherDataClient
+class Import24HourWeatherDataClient
 {
     public $client;
 
@@ -14,11 +14,10 @@ class ImportCurrentWeatherDataClient
     {
         $headers = ['X-Gismeteo-Token' => config('services.GisMeteo.token')];
         $this->client = new Client([
-            'headers' => $headers,
-            //233695 ul архангельское
-            'base_uri' => 'https://api.gismeteo.net/v2/weather/current/233695/?lang=en',
-            'verify' => false,
 
+            'headers' => $headers,
+            'base_uri' => 'https://api.gismeteo.net/v2/weather/forecast/aggregate/233695/?lang=en&days=10',
+            'verify' => false,
         ]);
     }
 }
