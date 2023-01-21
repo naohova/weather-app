@@ -9,4 +9,5 @@ class CurrentWeather extends Model
 {
     use HasFactory;
     protected $table = 'current_weather';
+    protected $guarded = [];
 }

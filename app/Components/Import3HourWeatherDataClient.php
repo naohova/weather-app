@@ -18,4 +18,9 @@ class Import3HourWeatherDataClient
             'verify' => false,
         ]);
     }
+
+    public function GetJson()
+    {
+        return json_decode($this->client->request('GET')->getBody()->getContents());
+    }
 }

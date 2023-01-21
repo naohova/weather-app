@@ -21,4 +21,8 @@ class ImportCurrentWeatherDataClient
 
         ]);
     }
+    public function GetJson()
+    {
+        return json_decode($this->client->request('GET')->getBody()->getContents());
+    }
 }

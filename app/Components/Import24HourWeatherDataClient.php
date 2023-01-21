@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Compoenets;
+namespace App\Components;
 use GuzzleHttp\Client;
 
 
@@ -19,5 +19,10 @@ class Import24HourWeatherDataClient
             'base_uri' => 'https://api.gismeteo.net/v2/weather/forecast/aggregate/233695/?lang=en&days=10',
             'verify' => false,
         ]);
+    }
+
+    public function GetJson()
+    {
+        return json_decode($this->client->request('GET')->getBody()->getContents());
     }
 }

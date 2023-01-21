@@ -30,7 +30,7 @@ return new class extends Migration
             $table->integer('precipitationType');
             $table->float('precipitationAmount')->nullable();
             $table->integer('precipitationIntensity');
-            $table->integer('phenominon')->nullable();
+            // $table->integer('phenominon')->nullable();
             $table->string('icon');
             $table->integer('gm');
             $table->integer('windScale_8');

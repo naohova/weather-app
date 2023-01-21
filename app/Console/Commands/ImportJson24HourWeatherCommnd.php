@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Compoenets\Import24HourWeatherDataClient;
+use App\Components\Import24HourWeatherDataClient;
 use Illuminate\Console\Command;
 
 class ImportJson24HourWeatherCommnd extends Command
