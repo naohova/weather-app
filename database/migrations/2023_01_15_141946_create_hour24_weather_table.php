@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('hour24_weather', function (Blueprint $table) {
             $table->id();
             $table->string('kind');
-            $table->integer('tod');
             $table->integer('dateUnix');
             $table->float('temperatureAir')->nullable();
             $table->float('temperatureComfort')->nullable();
@@ -30,12 +29,11 @@ return new class extends Migration
             $table->integer('precipitationType');
             $table->float('precipitationAmount')->nullable();
             $table->integer('precipitationIntensity');
-            // $table->integer('phenominon')->nullable();
             $table->string('icon');
             $table->integer('gm');
             $table->integer('windScale_8');
-            $table->integer('windDegree');
-            $table->float('windSpeed');
+            $table->integer('windDegree')->nullable();
+            $table->float('windSpeed')->nullable();
             $table->timestamps();
         });
     }

@@ -9,4 +9,5 @@ class Hour24Weather extends Model
 {
     use HasFactory;
     protected $table = 'hour24_weather';
+    protected $guarded = [];
 }

@@ -29,8 +29,8 @@ class InportJsonCurrentWeatherCommand extends Command
     public function handle()
     {
         $import = new ImportCurrentWeatherDataClient();
-        // $response = $import->client->request('GET');
-        // dd(json_decode($response->getBody()->getContents()));
-        dd($import->GetJson());
+        $response = $import->client->request('GET');
+        dd(json_decode($response->getBody()->getContents()));
+
     }
 }
