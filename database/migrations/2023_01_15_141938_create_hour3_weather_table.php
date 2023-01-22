@@ -13,27 +13,28 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hour3_weather', function (Blueprint $table) {
+        Schema::create('hour3_weather', function (Blueprint $table)
+        {
             $table->id();
-            $table->string('kind');
-            $table->integer('dateUnix');
-            $table->float('temperatureAir')->nullable();
-            $table->float('temperatureComfort')->nullable();
-            $table->float('temperatureWater')->nullable();
-            $table->string('description');
-            $table->integer('humidity');
-            $table->integer('pressure');
-            $table->integer('cloudinessPercent');
-            $table->integer('cloudinessType');
-            $table->boolean('storm');
-            $table->integer('precipitationType');
-            $table->float('precipitationAmount')->nullable();
-            $table->integer('precipitationIntensity');
-            $table->string('icon');
-            $table->integer('gm');
-            $table->integer('windScale_8')->nullable();
-            $table->integer('windDegree')->nullable();
-            $table->float('windSpeed');
+            $table->integer('Precipitation_Intensity');
+            $table->float('Precipitation_Amount')->nullable();
+            $table->integer('Precipitation_Type')->nullable();
+            $table->integer('Pressure');
+            $table->integer('Humidity');
+            $table->string('Icon');
+            $table->integer('Geomagnetic_Field');
+            $table->integer('Wind_Degree')->nullable();
+            $table->integer('Wind_Scale_8')->nullable();
+            $table->float('Wind_Speed');
+            $table->integer('Cloudiness_Type');
+            $table->integer('Cloudiness_Percent');
+            $table->integer('Date_Unix');
+            $table->string('Kind')->nullable();
+            $table->boolean('Storm');
+            $table->float('Temperature_Comfort')->nullable();
+            $table->float('Temperature_Water')->nullable();
+            $table->float('Temperature_Air')->nullable();
+            $table->string('Description');
             $table->timestamps();
         });
     }
