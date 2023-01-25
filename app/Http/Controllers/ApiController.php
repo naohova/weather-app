@@ -14,7 +14,7 @@ use App\Components\Import24HourWeatherDataClient;
 
 class ApiController extends Controller
 {
-    public function SendCurrentWeather()
+    public static function SendCurrentWeather()
     {
         $client = new ImportCurrentWeatherDataClient();
 
@@ -44,7 +44,7 @@ class ApiController extends Controller
 
     }
 
-    public function Send3HourWeather()
+    public static function Send3HourWeather()
     {
         $client = new Import3HourWeatherDataClient();
         $collection = $client->GetJson();
@@ -75,7 +75,7 @@ class ApiController extends Controller
         }
 
     }
-    public function Send24HourWeather()
+    public static function Send24HourWeather()
     {
         $client = new Import24HourWeatherDataClient();
         $collection = $client->GetJson();

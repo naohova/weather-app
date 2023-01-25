@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,7 +18,15 @@ class Kernel extends ConsoleKernel
     {
         //
         // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            ApiController::SendCurrentWeather();
+         })->hourlyAt(00);
+        $schedule->call(function () {
+            ApiController::Send24HourWeather();
+            ApiController::Send3HourWeather();
+        })->cron('0 4,12,20 * * *');
     }
+
 
     /**
      * Register the commands for the application.
