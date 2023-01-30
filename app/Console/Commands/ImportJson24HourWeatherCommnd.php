@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Components\Import24HourWeatherDataClient;
+use App\Http\Controllers\ApiController;
 use Illuminate\Console\Command;
 
 class ImportJson24HourWeatherCommnd extends Command
@@ -28,8 +28,6 @@ class ImportJson24HourWeatherCommnd extends Command
      */
     public function handle()
     {
-        $import = new Import24HourWeatherDataClient();
-        $response = $import->client->request('GET');
-        dd(json_decode($response->getBody()->getContents()));
+        ApiController::Send24HourWeather();
     }
 }

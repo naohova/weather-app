@@ -28,6 +28,7 @@ return new class extends Migration
             $table->float('Wind_Speed');
             $table->integer('Cloudiness_Type');
             $table->integer('Cloudiness_Percent');
+            $table->dateTime('Date_Local');
             $table->integer('Date_Unix');
             $table->string('Kind')->nullable();
             $table->boolean('Storm');

@@ -14,7 +14,7 @@ class Import3HourWeatherDataClient
         $headers = ['X-Gismeteo-Token' => config('services.GisMeteo.token')];
         $this->client = new Client([
             'headers' => $headers,
-            'base_uri' => 'https://api.gismeteo.net/v2/weather/forecast/233695/?lang=en&days=10',
+            'base_uri' => 'https://api.gismeteo.net/v2/weather/forecast/233695/?lang=en&days=1',
             'verify' => false,
         ]);
     }

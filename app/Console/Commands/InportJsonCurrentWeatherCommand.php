@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Components\ImportCurrentWeatherDataClient;
+use App\Http\Controllers\ApiController;
 use Illuminate\Console\Command;
 
 class InportJsonCurrentWeatherCommand extends Command
@@ -28,9 +29,6 @@ class InportJsonCurrentWeatherCommand extends Command
      */
     public function handle()
     {
-        $import = new ImportCurrentWeatherDataClient();
-        $response = $import->client->request('GET');
-        dd(json_decode($response->getBody()->getContents()));
-
+        ApiController::SendCurrentWeather();
     }
 }

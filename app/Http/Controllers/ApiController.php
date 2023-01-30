@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Http\Request;
+
 use App\Models\CurrentWeather;
 use App\Models\Hour3Weather;
 use App\Models\Hour24Weather;
@@ -33,6 +33,7 @@ class ApiController extends Controller
             'Wind_Speed' => $data->response->wind->speed->m_s,
             'Cloudiness_Type' => $data->response->cloudiness->type,
             'Cloudiness_Percent' => $data->response->cloudiness->percent,
+            'Date_Local' => $data->response->date->local,
             'Date_Unix' => $data->response->date->unix,
             'Kind' => $data->response->kind,
             'Storm' => $data->response->storm,
@@ -46,6 +47,7 @@ class ApiController extends Controller
 
     public static function Send3HourWeather()
     {
+        Hour3Weather::truncate();
         $client = new Import3HourWeatherDataClient();
         $collection = $client->GetJson();
         foreach ($collection->response as $data)
@@ -64,6 +66,7 @@ class ApiController extends Controller
                 'Wind_Speed' => $data->wind->speed->m_s,
                 'Cloudiness_Type' => $data->cloudiness->type,
                 'Cloudiness_Percent' => $data->cloudiness->percent,
+                'Date_Local' => $data->date->local,
                 'Date_Unix' => $data->date->unix,
                 'Kind' => $data->kind,
                 'Storm' => $data->storm,
@@ -73,15 +76,14 @@ class ApiController extends Controller
                 'Description' => $data->description->full,
             ]);
         }
-
     }
     public static function Send24HourWeather()
     {
+        Hour24Weather::truncate();
         $client = new Import24HourWeatherDataClient();
         $collection = $client->GetJson();
         foreach ($collection->response as $data)
         {
-            // dump($data);
             Hour24Weather::create([
                 'Precipitation_Intensity' => $data->precipitation->intensity,
                 'Precipitation_Amount' => $data->precipitation->amount,
@@ -95,6 +97,7 @@ class ApiController extends Controller
                 'Description' => $data->description->full,
                 'Cloudiness_Type' => $data->cloudiness->type,
                 'Cloudiness_Percent' => $data->cloudiness->percent,
+                'Date_Local' => $data->date->local,
                 'Date_Unix' => $data->date->unix,
                 'Kind' => $data->kind,
                 'Storm' => $data->storm,

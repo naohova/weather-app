@@ -2,9 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Components\Import3HourWeatherDataClient;
+use App\Http\Controllers\ApiController;
 use Illuminate\Console\Command;
-use Monolog\Formatter\JsonFormatter;
 
 class ImportJson3HourWeatherCommnd extends Command
 {
@@ -29,9 +28,6 @@ class ImportJson3HourWeatherCommnd extends Command
      */
     public function handle()
     {
-        $import = new Import3HourWeatherDataClient();
-        $response = $import->client->request('GET');
-        dd(json_decode($response->getBody()->getContents()));
-
+        ApiController::Send3HourWeather();
     }
 }
