@@ -8,15 +8,15 @@ use App\Models\CurrentWeather;
 use App\Models\Hour3Weather;
 use App\Models\Hour24Weather;
 
-use App\Components\ImportCurrentWeatherDataClient;
-use App\Components\Import3HourWeatherDataClient;
-use App\Components\Import24HourWeatherDataClient;
+use App\Components\ImportGismeteoCurrentWeather;
+use App\Components\ImportGismeteoForecastIn3HourStep;
+use App\Components\ImportGismeteoForecastIn24HourStep;
 
 class ApiController extends Controller
 {
-    public static function SendCurrentWeather()
+    private static function SaveCurrentWeather()
     {
-        $client = new ImportCurrentWeatherDataClient();
+        $client = new ImportGismeteoCurrentWeather();
 
         $data = $client->GetJson();
         // dump($data);
@@ -44,11 +44,10 @@ class ApiController extends Controller
         ]);
 
     }
-
-    public static function Send3HourWeather()
+    private static function SaveForecastIn3HourStep()
     {
         Hour3Weather::truncate();
-        $client = new Import3HourWeatherDataClient();
+        $client = new ImportGismeteoForecastIn3HourStep();
         $collection = $client->GetJson();
         foreach ($collection->response as $data)
         {
@@ -77,10 +76,10 @@ class ApiController extends Controller
             ]);
         }
     }
-    public static function Send24HourWeather()
+    private static function SaveFotecastIn24HourStep()
     {
         Hour24Weather::truncate();
-        $client = new Import24HourWeatherDataClient();
+        $client = new ImportGismeteoForecastIn24HourStep();
         $collection = $client->GetJson();
         foreach ($collection->response as $data)
         {
@@ -120,6 +119,15 @@ class ApiController extends Controller
                 'Icon' => $data->icon,
             ]);
         }
+    }
+    public static function ImportCurrentWeather()
+    {
+        ApiController::SaveCurrentWeather();
+    }
+    public static function ImportForecast()
+    {
+        ApiController::SaveForecastIn3HourStep();
+        ApiController::SaveFotecastIn24HourStep();
     }
 }
 

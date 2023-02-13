@@ -4,7 +4,7 @@
 namespace App\Components;
 use GuzzleHttp\Client;
 
-class Import24HourWeatherDataClient
+class ImportGismeteoForecastIn24HourStep
 {
     public $client;
 

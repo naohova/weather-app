@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 
 
-class ImportCurrentWeatherDataClient
+class ImportGismeteoCurrentWeather
 {
     public $client;
 
