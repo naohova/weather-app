@@ -16,21 +16,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
         $schedule->call(function () {
-            ApiController::SendCurrentWeather();
+            ApiController::ImportCurrentWeather();
          })->hourlyAt(00);
 
         $schedule->call(function () {
-            ApiController::Send24HourWeather();
+            ApiController::ImportForecast();
         })->cron('0 4,12,20 * * *');
-
-        $schedule->call(function () {
-            ApiController::Send3HourWeather();
-        })->cron('0 4,12,20 * * *');
-        // $schedule->command('import:GismeteoCurrent')->hourlyAt(00);
-        // $schedule->command('import:Gismeteo3hour')->cron('0 4,12,20 * * *');
-        // $schedule->command('import:Gismeteo:24hour')->cron('0 4,12,20 * * *');
     }
 
     /**
