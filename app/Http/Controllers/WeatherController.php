@@ -14,7 +14,7 @@ class WeatherController
         $today = date("Y-m-d H:i:s");
         //take current
         $current = CurrentWeather::find(CurrentWeather::max('id'));
-        $by3Step = Hour3Weather::all()->where('created_at', '>', ($today));
+        $forecast = Hour3Weather::all()->where('created_at', '>', ($today));
         var_dump($today);
         dump($current);
         dump(json_decode($by3Step));
