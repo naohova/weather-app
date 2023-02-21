@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('meteor');
 });
-Route::get('/test', 'App\Http\Controllers\ApiController@Send24HourWeather');
+Route::get('/test', 'App\Http\Controllers\WeatherController@dataBuilder');
+Route::get('/sandbox', 'App\Http\Controllers\ArrayFormatterController@sandbox');

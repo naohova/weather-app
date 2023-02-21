@@ -56,19 +56,19 @@
                                 <p class="drac-text drac-line-height drac-text-white">Humidity</p>
                             </div>
                             <div class="col">
-                                <p class="drac-text drac-line-height drac-text-white">UV index</p>
+                                <p class="drac-text drac-line-height drac-text-white">Geomagnetic Field</p>
                             </div>
                         </div>
                         <div class="row align-items-end">
                             <div class="col">
                                 <span class="drac-text drac-line-height drac-text-white">Pressure</span>
                             </div>
-                            <div class="col">
+                            {{-- <div class="col">
                                 <span class="drac-text drac-line-height drac-text-white">Visibility</span>
                             </div>
                             <div class="col">
                                 <span class="drac-text drac-line-height drac-text-white">Dew point</span>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
