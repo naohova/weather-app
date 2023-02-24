@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Console\Command;
 
 class ImportCurrentWeatherCommand extends Command
@@ -12,7 +12,7 @@ class ImportCurrentWeatherCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'import:current';
+    protected $signature = 'get:current';
 
     /**
      * The console command description.
@@ -28,6 +28,6 @@ class ImportCurrentWeatherCommand extends Command
      */
     public function handle()
     {
-        ApiController::ImportCurrentWeather();
+        WeatherController::saveCurrentWeather();
     }
 }

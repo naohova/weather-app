@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Console\Command;
 
 class ImportForecastCommand extends Command
@@ -12,14 +12,14 @@ class ImportForecastCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'import:forecast';
+    protected $signature = 'get:forecast3';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Call Gismeteo to get current weather and save it';
+    protected $description = 'Call Gismeteo to get forecast and save it';
 
     /**
      * Execute the console command.
@@ -28,6 +28,6 @@ class ImportForecastCommand extends Command
      */
     public function handle()
     {
-        ApiController::ImportForecast();
+        WeatherController::saveForecastIn3HourStep();
     }
 }

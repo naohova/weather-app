@@ -16,8 +16,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('import:current')->hourlyAt(00);
-        $schedule->command('import:forecast')->dailyAt('04:00')->timezone('Europe/Samara');
+        $schedule->command('get:current')->hourlyAt(00);
+        $schedule->command('get:forecast3')->dailyAt('04:00')->timezone('Europe/Samara');
+        $schedule->command('get:forecast24')->dailyAt('04:00')->timezone('Europe/Samara');
 
     }
 

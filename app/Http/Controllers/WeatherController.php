@@ -12,9 +12,9 @@ use App\Components\ImportGismeteoCurrentWeather;
 use App\Components\ImportGismeteoForecastIn3HourStep;
 use App\Components\ImportGismeteoForecastIn24HourStep;
 
-class ApiController extends Controller
+class WeatherController extends Controller
 {
-    private static function SaveCurrentWeather()
+    public static function saveCurrentWeather()
     {
         $client = new ImportGismeteoCurrentWeather();
 
@@ -44,7 +44,7 @@ class ApiController extends Controller
         ]);
 
     }
-    private static function SaveForecastIn3HourStep()
+    public static function saveForecastIn3HourStep()
     {
         Hour3Weather::truncate();
         $client = new ImportGismeteoForecastIn3HourStep();
@@ -76,7 +76,7 @@ class ApiController extends Controller
             ]);
         }
     }
-    private static function SaveFotecastIn24HourStep()
+    public static function saveFotecastIn24HourStep()
     {
         Hour24Weather::truncate();
         $client = new ImportGismeteoForecastIn24HourStep();
@@ -120,15 +120,15 @@ class ApiController extends Controller
             ]);
         }
     }
-    public static function ImportCurrentWeather()
-    {
-        ApiController::SaveCurrentWeather();
-    }
-    public static function ImportForecast()
-    {
-        ApiController::SaveForecastIn3HourStep();
-        ApiController::SaveFotecastIn24HourStep();
-    }
+    // public static function ImportCurrentWeather()
+    // {
+    //     ApiController::SaveCurrentWeather();
+    // }
+    // public static function ImportForecast()
+    // {
+    //     ApiController::SaveForecastIn3HourStep();
+    //     ApiController::SaveFotecastIn24HourStep();
+    // }
 }
 
 
